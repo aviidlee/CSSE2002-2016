@@ -9,12 +9,13 @@
 - If Eclipse doesn't launch on the lab machines, try running it as administrator.
 - There is a *Getting started with Eclipse* guide on the course materials page. 
 - The root directory is the project directory. Suppose you have a project structure like this:
-  `PracProjectFolder
+  <pre><code>
+  PracProjectFolder
     |_ src
     |   |_mypackage
     |        |_ MyClass.java
     |_ someFile.txt`
-
+  </code></pre>
 Then to tell Eclipse where to find `MyClass.java`, you need to say `src/mypackage/MyClass.java`,
 and to tell it where to find `someFile.txt`, you need to say `someFile.txt`.  
 
