@@ -7,6 +7,9 @@
 ## Helpful tips
 ### Using Eclipse 
 - If Eclipse doesn't launch on the lab machines, try running it as administrator.
+- When you open Eclipse, it will ask you to specify a *workspace*; this is just a folder where
+  all your projects (code, settings etc.) live. Make a new folder that you will be able to find agian;
+  don't just use puffball!!
 - There is a *Getting started with Eclipse* guide on the course materials page. 
 - The root directory is the project directory. Suppose you have a project structure like this:
   
