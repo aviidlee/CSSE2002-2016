@@ -23,3 +23,35 @@
     - what can you do to the object/what can the object do? -> methods that change instance variables
 - Try Question 1.3
 
+## Implementation Invariants 
+- What are they for? 
+- How do we maintain them? 
+
+         /* What is wrong with this code? */
+         class Wizard {
+           public int health;
+           
+           public void fireSpell() {
+             // stuff
+           }
+         }
+         
+         /* what about this code? How should we change it? */
+         class Troll {
+           private ArrayList<Weapon> weapons;
+           private int health;
+           private int defence;
+           
+           public ArrayList<Weapon> getWeapons() {
+             return weapons;
+           }
+         }
+         
+          /* what about this code? How should we change it? */
+         class Warrior {
+           private ArrayList<Weapon> weapons;
+           
+           public void setWeapons(ArrayList<Weapon> weapons) {
+             this.weapons = weapons;
+           }
+         }
