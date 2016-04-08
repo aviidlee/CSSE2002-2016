@@ -32,8 +32,9 @@
   ## Some notes on invariants 
   - Your invariants will depend on your implementation, because they say things about the 
     state of and the relationship between your instance variables. 
-  - You do NOT need to state invariants which are properties of your instance variables;
-    e.g., in the Location class, don't state invariants of Section.
+  - You do NOT need to state invariants which are invariants of your instance variables;
+    e.g., in the Location class, don't state invariants of Section. If you are using HashSets,
+    you don't need to state that they don't contain duplicates.
 
   ## Example for an immutable class
       class Fight {
@@ -145,7 +146,7 @@
 
     ### Better comment 
         /* An inventory of the tavern storing the number of barrels 
-      	 * of a given drink that is in stock
+      	 * of a given drink
       	 */
       	private HashMap<String, Integer> inventory;
     
