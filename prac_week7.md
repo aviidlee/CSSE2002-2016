@@ -41,3 +41,4 @@
 
 # Exercise 2 
 - Note that while `HashSet<Set<Integer>>` is considered a subtype of `Set<Set<Integer>>`, `HashSet<HashSet<Integer>>` is not.
+  This will be covered later in the course, but if you are curious, you can read the documentation [here](https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html).
