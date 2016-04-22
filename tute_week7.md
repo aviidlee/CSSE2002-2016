@@ -25,7 +25,7 @@
 
 		/**
 		 * @require list != null, list.size() > 0
-		 * @ensure for all elements x in list, \return >= x
+		 * @ensure for all 0 <= j < list.size(), list.get(j) <= \result
 		 */
 		public static int max(List<Integer> list) {
 			int max = list.get(0);
