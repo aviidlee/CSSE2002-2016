@@ -32,3 +32,81 @@
 - View: ask the model for data, tell model to update itself.
 - Controller: respond to events and control what the view shows by talking to 
   view and model 
+
+## Monolithic method example
+```java
+/**
+ * This is a method in the Wizard class which processes an attack by 
+ * a wizard, directed to the characters in targets. 
+ */
+public void processAttack(Attack attack, List<Character> targets) {
+	for(Character target : targets) {
+		// See if the attack's special effect is applicable to target 
+		boolean applicable = false;
+		int potionBonus = 0;
+		if(!target.getResistances().contains(attack.specialEffect())) {
+			applicable = true;
+		}
+		
+		if(target.getVulnerabilities().contains(attack.specialEffect())) {
+			applicable = true;
+		}
+
+		if(target.getPotionEffects().contains(attack.specialEffect())) {
+			applicable = true;
+			potionBonus = target.getPotionEffects().potionBonus();
+		}
+
+		SpecialEffect specialEffect = attack.specialEffect();
+
+		if(specialEffect.isType(DURATION_EFFECT)) {
+			target.processDurationEffects(specialEffect);
+		}
+
+		if(specialEffect.isType(INFECTIOUS_EFFECT)) {
+			for(Character nearBy : target.nearByCharacters()) {
+				// Apply the effect to guys near this target
+				boolean applicable = false;
+				int potionBonus = 0;
+				if(!target.getResistances().contains(attack.specialEffect())) {
+					applicable = true;
+				}
+				
+				if(target.getVulnerabilities().contains(attack.specialEffect())) {
+					applicable = true;
+				}
+
+				if(target.getPotionEffects().contains(attack.specialEffect())) {
+					applicable = true;
+					potionBonus = target.getPotionEffects().potionBonus();
+				}
+
+				SpecialEffect specialEffect = attack.specialEffect();
+
+				if(specialEffect.isType(DURATION_EFFECT)) {
+					target.processDurationEffects(specialEffect);
+				}
+			}
+		}
+
+		if(specialEffect.isType(EASTER_EGG)) {
+			Player.addAchievement(new Achievement("YOU ARE AWESOME. I LOVE WIZARDS"));
+			Graphics.showUnlockedAchievement();
+			LeaderBoard.update();
+		}
+
+		int damageBonus = 0;
+		// Apply the actual health damage 
+		if(target.getVulnerabilities.contains(weakened)) {
+			damageBonus = 10;
+		}
+
+		if(attack.attackBonuses().contains(ARMOUR_BONUS)) {
+			damageBonus += target.armourRating() * 0.4;
+		}
+
+		int damage = attack.baseDamage() + damageBonus;
+		target.setHealth(damage);
+	}
+}
+```
