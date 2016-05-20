@@ -123,12 +123,12 @@ public void processAttack(Attack attack, List<Character> targets) {
 	}
 }
 
-public void applySpecialEffects(Attack attack, Character target) {
+private void applySpecialEffects(Attack attack, Character target) {
 	....
 	updateAchievements(....);
 }
 
-public void applyDamage(Attack attack, Character target);
+private void applyDamage(Attack attack, Character target);
 
-public void updateAchievements(...);
+private void updateAchievements(...);
 ```
