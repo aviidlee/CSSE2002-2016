@@ -110,3 +110,25 @@ public void processAttack(Attack attack, List<Character> targets) {
 	}
 }
 ```
+Better would be:
+```java
+/**
+ * This is a method in the Wizard class which processes an attack by 
+ * a wizard, directed to the characters in targets. 
+ */
+public void processAttack(Attack attack, List<Character> targets) {
+	for(Character target : targes) {
+		applySpecialEffects(attack, target);
+		applyDamage(attack, target);
+	}
+}
+
+public void applySpecialEffects(Attack attack, Character target) {
+	....
+	updateAchievements(....);
+}
+
+public void applyDamage(Attack attack, Character target);
+
+public void updateAchievements(...);
+```
