@@ -5,30 +5,29 @@
 - How to figure out which method is called when using overriden/overloaded methods
 - Learn how to apply the substitution principle
 
-
 ## Cheatsheet (from lecture notes)
-	### Overloading and overriding
-	- Overloaded - declared type 
-	- Overriden - actual type 
-	
-	- Procedure:
-		```java
-		Animal animal = new Dog();
-		animal.makeNoise(Situation s);
-		```
-		- Choose a method based on declared type Animal; a makeNoise(Situtation s)
-		  in Animal or in the closest superclass. 
-		- If the method is overriden in Dog, choose this method. Otherwise stick
-		  with original choice.
+### Overloading and overriding
+- Overloaded - declared type 
+- Overriden - actual type 
 
-	- Designing for extension 
-		- Use protected methods to access private instance variables 
-		- Constructor must not invoke overridable method
-		- Document use of overridableb method
+- Procedure:
+	```java
+	Animal animal = new Dog();
+	animal.makeNoise(Situation s);
+	```
+	- Choose a method based on declared type Animal; a makeNoise(Situtation s)
+	  in Animal or in the closest superclass. 
+	- If the method is overriden in Dog, choose this method. Otherwise stick
+	  with original choice.
 
-	### Wildcards
-	- Stuff<Dog> is NOT a subtype of Stuff<Animal>
-	- But Stuff<Dog> is ok to use in place of Stuff<?>
+- Designing for extension 
+	- Use protected methods to access private instance variables 
+	- Constructor must not invoke overridable method
+	- Document use of overridableb method
+
+### Wildcards
+- `Stuff<Dog>` is NOT a subtype of `Stuff<Animal>`
+- But `Stuff<Dog>` is ok to use in place of `Stuff<?>`
 
 ## Q1
 - Keep track of program state 
@@ -59,7 +58,7 @@
 
 ```java
 public abstract class Animal {
-	abstract 
+	public abstract void makeNoise();
 }
 ```
 - What functionality is common among all pieces?
